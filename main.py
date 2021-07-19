@@ -2,7 +2,7 @@ import sys
 
 from PIL import Image
 
-from utils import unflatten
+from utils import map_to_brightness_avg, unflatten
 
 try:
     im = Image.open("./ascii-pineapple.jpg")
@@ -14,3 +14,4 @@ except:
     sys.exit(-1)
 
 pixels = unflatten(list(im.getdata()), height, width)
+brightness_matrix = map_to_brightness_avg(pixels)
