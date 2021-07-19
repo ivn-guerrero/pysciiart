@@ -2,6 +2,8 @@ import sys
 
 from PIL import Image
 
+from utils import unflatten
+
 try:
     im = Image.open("./ascii-pineapple.jpg")
     width, height = im.size
@@ -10,3 +12,5 @@ try:
 except:
     print("Couldn't load the image")
     sys.exit(-1)
+
+pixels = unflatten(list(im.getdata()), height, width)
