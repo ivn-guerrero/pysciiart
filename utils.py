@@ -61,8 +61,8 @@ def map_to_chars(
 
 
 # prints a matrix into the console
-def print_matrix(matrix):
+def print_ascii_art(matrix):
     for row in matrix:
         for col in row:
-            print(col, end='')
+            print(col * 3, end='')
         print()

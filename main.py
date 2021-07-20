@@ -5,7 +5,8 @@ from PIL import Image
 from utils import (
     map_to_brightness_avg,
     map_to_chars,
-    print_matrix,
+    print_ascii_art,
+    print_ascii_art,
     unflatten,
 )
 
@@ -30,4 +31,4 @@ char_matrix = map_to_chars(
     0,
     len(CHAR_MAP) - 1
 )
-print_matrix(char_matrix)
+print_ascii_art(char_matrix)
