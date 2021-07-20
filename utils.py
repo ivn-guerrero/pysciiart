@@ -58,3 +58,11 @@ def map_to_chars(
         char_matrix.append(char_row)
     
     return char_matrix
+
+
+# prints a matrix into the console
+def print_matrix(matrix):
+    for row in matrix:
+        for col in row:
+            print(col, end='')
+        print()

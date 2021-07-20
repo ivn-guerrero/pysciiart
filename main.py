@@ -2,12 +2,17 @@ import sys
 
 from PIL import Image
 
-from utils import map_to_brightness_avg, map_to_chars, unflatten
+from utils import (
+    map_to_brightness_avg,
+    map_to_chars,
+    print_matrix,
+    unflatten,
+)
 
 CHAR_MAP = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 
 try:
-    im = Image.open("./ascii-pineapple.jpg")
+    im = Image.open("./input.jpg")
     width, height = im.size
     print("Successfully loaded image!")
     print(f"Image size: {width} x {height}")
@@ -17,4 +22,12 @@ except:
 
 pixels = unflatten(list(im.getdata()), height, width)
 brightness_matrix = map_to_brightness_avg(pixels)
-char_matrix = map_to_chars(brightness_matrix, CHAR_MAP, 0, 255, 0, len(CHAR_MAP))
+char_matrix = map_to_chars(
+    brightness_matrix,
+    CHAR_MAP,
+    0,
+    255,
+    0,
+    len(CHAR_MAP) - 1
+)
+print_matrix(char_matrix)
