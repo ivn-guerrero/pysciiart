@@ -1,3 +1,4 @@
+import os
 import sys
 
 from PIL import Image
@@ -15,6 +16,7 @@ CHAR_MAP = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 try:
     im = Image.open("./input.jpg")
     width, height = im.size
+    os.system("cls" if os.name == "nt" else "clear")
     print("Successfully loaded image!")
     print(f"Image size: {width} x {height}")
 except:
